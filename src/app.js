@@ -4,20 +4,25 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el: "#app",
         data: {
-            todos: [
-                {name: "Buy shopping", isPriority: false}, 
-                {name: "Clean bathroom", isPriority: false}, 
-                {name: "Car's MOT", isPriority: false}
-            ],
-            newTodo: ""
+            todos: [],
+            newTodo: "",
+            priority: ""
         },
         methods: {
             saveNewTodo: function() {
-                this.todos.push({
-                    name: this.newTodo,
-                    isPriority: false
-                });
+                if(this.priority == "High") {
+                    this.todos.unshift({
+                        name: this.newTodo,
+                        priority: this.priority
+                    })
+                }else {
+                    this.todos.push({
+                        name: this.newTodo,
+                        priority: this.priority
+                    });
+                }
                 this.newTodo = "";
+                this.priority = "";
             }
         }
     });

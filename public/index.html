@@ -6,25 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Todo List</title>
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/style.css">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
   <div id="app">
+      <h1>Daily Todos</h1>
     <form v-on:submit.prevent="saveNewTodo">
         <label for="new-todo"></label>
         <input id="new-todo" type="text" v-model="newTodo"/>
 
-        <input type="radio" id="high" name="priority" value="High">
+        <input class="radio" type="radio" id="high" name="priority" value="High" v-model="priority">
         <label for="high">High</label>
 
-        <input type="radio" id="low" name="priority" value="Low">
+        <input class="radio" type="radio" id="low" name="priority" value="Low" v-model="priority">
         <label for="low">Low</label>
 
-        <input type="submit" value="Save Item"/>
+        <input class="button" type="submit" value="Save Item"/>
     </form>
     <ul>
-        <li v-for="todo in todos">
+        <li v-for="todo in todos" v-bind:class="todo.priority == 'High' ? 'high' : 'low' ">
             <span>{{todo.name}}</span>
         </li>
     </ul>
