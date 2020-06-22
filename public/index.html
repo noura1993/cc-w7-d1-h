@@ -13,7 +13,7 @@
   <div id="app">
     <form v-on:submit.prevent="saveNewTodo">
         <label for="new-todo"></label>
-        <input id="new-todo" type="text"/>
+        <input id="new-todo" type="text" v-model="newTodo"/>
 
         <input type="radio" id="high" name="priority" value="High">
         <label for="high">High</label>
@@ -25,7 +25,7 @@
     </form>
     <ul>
         <li v-for="todo in todos">
-            <span>{{todo}}</span>
+            <span>{{todo.name}}</span>
         </li>
     </ul>
   </div>
