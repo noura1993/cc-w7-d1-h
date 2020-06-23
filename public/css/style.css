@@ -3,18 +3,20 @@ html {
 }
 
 body {
-    background-color: rgba(214, 55, 76, 0.747);
     color: #fff;
-    opacity: 0.7;
     font-family: cursive;
     height: 100%;
+    background-image: url('colorful.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
 }
 
 h1 {
     padding-top: 2%;
     text-align: center;
     font-size: 45px;
-    color: rgb(255, 255, 255);
+    color: rgb(73, 199, 193);
 }
 
 #app {
@@ -22,7 +24,6 @@ h1 {
 }
 
 #new-todo{
-    background-color: rgb(233, 101, 118);
     width: 420px;
     padding: .50rem 0;
     border: 1px solid #fff;
@@ -30,7 +31,6 @@ h1 {
     margin-bottom: 1rem;
     text-align: center;
     font-size: 1rem;
-    color: white;
 }
 
 .radio {
@@ -42,7 +42,7 @@ h1 {
     width: 5.11rem;
     padding: .44rem 0;
     border-radius: 54px;
-    background-color: rgb(233, 57, 80);
+    background-color: rgb(73, 199, 193);
     text-align: center;
     font-size: .833rem;
     transition: background-color .25s;
@@ -54,20 +54,29 @@ h1 {
 }
 
 .button:hover {
-    background-color: rgb(182, 26, 59);
+    background-color: rgb(87, 248, 240);
 }
 
 ul{ 
     display: inline-block;   
 }
+.radio-high {
+    color: rgb(101, 238, 231);
+}
+
+.radio-low {
+    color: rgb(223, 160, 219);
+}
+
 
 li.high {
     border: 1px solid #fff;
-    background-color: rgb(233, 57, 80);
+    background-color: rgb(101, 238, 231);
 }
   
 li.low {
     border: 1px solid #fff;
+    background-color: rgb(223, 160, 219);
 }
 
 li {
